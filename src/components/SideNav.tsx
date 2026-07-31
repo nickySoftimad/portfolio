@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
+import { Mail } from "lucide-react";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import { profile } from "@/data/profile";
 
 const links = [
@@ -19,11 +21,27 @@ export default function SideNav() {
     <aside className="lg:fixed lg:top-0 lg:left-0 lg:h-screen lg:w-64 border-b lg:border-b-0 lg:border-r border-border bg-background z-40 flex lg:flex-col justify-between">
       <div className="flex lg:flex-col w-full">
         <div className="p-6 border-b lg:border-b border-border hidden lg:block">
-          <Link href="/" className="block">
-            <span className="text-sm font-mono text-accent">N.R</span>
-            <p className="text-xs text-muted mt-1 leading-snug">
-              {profile.title}
-            </p>
+          <Link href="/" className="group block">
+            <span className="relative inline-flex items-center justify-center w-12 h-12 rounded-xl border border-border bg-surface overflow-hidden transition-colors duration-300 group-hover:border-accent/60">
+              <span
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-500"
+                style={{ background: "var(--accent-glow)" }}
+                aria-hidden="true"
+              />
+              <span className="relative font-mono text-base font-semibold text-accent tracking-tight">
+                NR
+              </span>
+            </span>
+            <span className="block text-sm font-medium tracking-tight mt-3.5 group-hover:text-accent transition-colors">
+              {profile.name}
+            </span>
+            <span className="block text-[11px] text-muted mt-1 leading-relaxed">
+              Frontend React · Fullstack freelance
+            </span>
+            <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] text-muted">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              Disponible
+            </span>
           </Link>
         </div>
 
@@ -59,8 +77,25 @@ export default function SideNav() {
       </div>
 
       <div className="hidden lg:block p-6 text-xs text-muted border-t border-border">
-        <p>{profile.location}</p>
-        <p className="mt-1">Disponible pour missions freelance</p>
+        <div className="flex gap-4 mb-4">
+          <a
+            href={profile.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="hover:text-accent transition-colors"
+          >
+            <LinkedinIcon className="w-4 h-4" />
+          </a>
+          <a
+            href={`mailto:${profile.email}`}
+            aria-label="Email"
+            className="hover:text-accent transition-colors"
+          >
+            <Mail className="w-4 h-4" strokeWidth={1.75} />
+          </a>
+        </div>
+        <p className="leading-relaxed">{profile.location}</p>
       </div>
     </aside>
   );

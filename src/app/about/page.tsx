@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { profile } from "@/data/profile";
+import { projects } from "@/data/projects";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -12,10 +14,52 @@ export default function AboutPage() {
     <div className="px-6 sm:px-12 lg:px-16 py-20">
       <FadeIn>
         <p className="font-mono text-accent text-sm mb-4">02</p>
-        <h1 className="text-4xl sm:text-5xl font-semibold mb-8">Parcours</h1>
-        <p className="max-w-2xl text-muted text-lg leading-relaxed mb-20">
-          {profile.summary}
-        </p>
+        <h1 className="text-4xl sm:text-5xl font-semibold mb-12">Parcours</h1>
+
+        <div className="grid lg:grid-cols-[220px_1fr] gap-10 lg:gap-14 items-start mb-14">
+          <div className="group relative w-40 lg:w-full max-w-[220px]">
+            <div
+              className="absolute -inset-2 rounded-2xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"
+              style={{ background: "var(--accent-glow)" }}
+              aria-hidden="true"
+            />
+            <Image
+              src="/profile.jpg"
+              alt={profile.name}
+              width={440}
+              height={550}
+              priority
+              className="relative w-full aspect-[4/5] object-cover object-top rounded-xl border border-border grayscale group-hover:grayscale-0 transition-[filter] duration-500"
+            />
+          </div>
+
+          <div>
+            <p className="text-2xl sm:text-3xl font-medium leading-snug">
+              {profile.name}
+            </p>
+            <p className="text-accent text-sm mt-2">{profile.title}</p>
+            <p className="max-w-2xl text-muted leading-relaxed mt-6">
+              {profile.summary}
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-3 gap-px bg-border max-w-3xl mb-24 border border-border">
+          {[
+            { value: "3+", label: "ans d'expérience" },
+            { value: String(projects.length), label: "projets livrés" },
+            { value: "2", label: "SaaS médicaux en production" },
+          ].map((stat) => (
+            <div key={stat.label} className="bg-background px-6 py-7">
+              <p className="index-num text-3xl sm:text-4xl font-semibold tracking-tight">
+                {stat.value}
+              </p>
+              <p className="text-xs text-muted mt-2 leading-snug">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
       </FadeIn>
 
       <section className="mb-24">
