@@ -20,7 +20,7 @@ Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un pr
 
 ## À faire / idées
 
-- [x] SEO : `sitemap.ts`, `robots.ts`, metadata Open Graph/Twitter + `metadataBase` dans `layout.tsx`. **Note : `baseUrl` est un placeholder (`https://nicky-rabesoa.vercel.app`) dans `sitemap.ts`, `robots.ts` et `layout.tsx` — à remplacer par l'URL réelle une fois déployé.**
+- [x] SEO : `sitemap.ts`, `robots.ts`, metadata Open Graph/Twitter + `metadataBase` dans `layout.tsx`. Déployé sur `https://nicky-rabesoa.vercel.app` — correspond déjà au `baseUrl` utilisé dans le code.
 - [x] Nettoyage `public/` : SVG par défaut de `create-next-app` supprimés.
 - [x] Favicon (`icon.tsx`) et image Open Graph (`opengraph-image.tsx`) générés dynamiquement avec `next/og`, thème bleu + initiales N.R.
 - [x] Accessibilité : styles `focus-visible` ajoutés dans `globals.css` pour liens et boutons.

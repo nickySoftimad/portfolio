@@ -18,7 +18,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeOut }}
         >
-          01 — Développeur Fullstack / Frontend React
+          01 — Frontend React & Fullstack
         </motion.p>
         <motion.h1
           className="text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl"
@@ -35,7 +35,9 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25, ease: easeOut }}
         >
-          {profile.summary}
+          Plus de 3 ans à concevoir des SaaS et plateformes métier avec React,
+          Next.js et TypeScript — de la maquette au déploiement. Actuellement
+          freelance, disponible pour des missions à distance.
         </motion.p>
         <motion.div
           className="mt-10 flex flex-wrap gap-4"
