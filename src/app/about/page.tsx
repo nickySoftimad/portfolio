@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
@@ -41,6 +42,12 @@ export default function AboutPage() {
             <p className="max-w-2xl text-muted leading-relaxed mt-6">
               {profile.summary}
             </p>
+            <Link
+              href="/cv"
+              className="inline-flex items-center gap-2 mt-6 border border-border px-5 py-2.5 text-sm font-medium hover:border-accent hover:text-accent transition-colors"
+            >
+              Télécharger le CV →
+            </Link>
           </div>
         </div>
 

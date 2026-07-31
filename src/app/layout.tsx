@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import SideNav from "@/components/SideNav";
 import PageTransition from "@/components/PageTransition";
@@ -50,6 +51,7 @@ export default function RootLayout({
         <main className="flex-1 lg:ml-64 min-h-screen">
           <PageTransition>{children}</PageTransition>
         </main>
+        <Analytics />
       </body>
     </html>
   );

@@ -42,3 +42,27 @@ button:focus-visible {
 .index-num {
   font-variant-numeric: tabular-nums;
 }
+
+@media print {
+  aside {
+    display: none !important;
+  }
+
+  main {
+    margin-left: 0 !important;
+  }
+
+  body,
+  .cv-page {
+    background: #ffffff !important;
+    color: #111114 !important;
+  }
+
+  .cv-page .text-muted {
+    color: #4b4b52 !important;
+  }
+
+  .cv-page .text-accent {
+    color: #3b82f6 !important;
+  }
+}
