@@ -14,10 +14,25 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Nicky Rabesoa — Ingénieur Frontend React";
+const description =
+  "Portfolio de Nicky Rabesoa, ingénieur frontend React et développeur fullstack freelance basé à Madagascar.";
+
 export const metadata: Metadata = {
-  title: "Nicky Rabesoa — Ingénieur Frontend React",
-  description:
-    "Portfolio de Nicky Rabesoa, ingénieur frontend React et développeur fullstack freelance basé à Madagascar.",
+  metadataBase: new URL("https://nicky-rabesoa.vercel.app"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
