@@ -4,6 +4,7 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Parcours — Nicky Rabesoa",
+  description: profile.summary,
 };
 
 export default function AboutPage() {

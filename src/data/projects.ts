@@ -12,6 +12,7 @@ export type Project = {
   result: string;
   stack: string[];
   color: string;
+  images?: string[];
 };
 
 export const projects: Project[] = [
@@ -34,6 +35,11 @@ export const projects: Project[] = [
       "Plateforme en production utilisée par des professionnels de santé, avec une base de code maintenable et scalable, et une équipe alignée sur des standards React solides.",
     stack: ["React.js", "TypeScript", "Tailwind CSS", "API REST", "Node.js"],
     color: "#6366f1",
+    images: [
+      "/projects/purecontrol/1.png",
+      "/projects/purecontrol/2.png",
+      "/projects/purecontrol/3.png",
+    ],
   },
   {
     slug: "aligneurs-francais",
@@ -54,6 +60,11 @@ export const projects: Project[] = [
       "Amélioration mesurable de l'expérience utilisateur et de l'efficacité opérationnelle, relation de confiance long terme avec le client menant à une collaboration freelance directe.",
     stack: ["React.js", "JavaScript", "API REST", "Gestion d'état"],
     color: "#0ea5e9",
+    images: [
+      "/projects/laf/1.png",
+      "/projects/laf/2.png",
+      "/projects/laf/3.png",
+    ],
   },
   {
     slug: "dynamikmood",

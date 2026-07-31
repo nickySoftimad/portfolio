@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { projects } from "@/data/projects";
@@ -15,7 +16,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
-  return { title: project ? `${project.title} — Nicky Rabesoa` : "Projet" };
+  if (!project) return { title: "Projet" };
+  return {
+    title: `${project.title} — Nicky Rabesoa`,
+    description: project.summary,
+  };
 }
 
 export default async function ProjectDetailPage({
@@ -77,6 +82,27 @@ export default async function ProjectDetailPage({
             </div>
           </div>
         </FadeIn>
+
+        {project.images && project.images.length > 0 && (
+          <FadeIn delay={0.15}>
+            <div className="grid sm:grid-cols-3 gap-4 mt-16">
+              {project.images.map((src) => (
+                <div
+                  key={src}
+                  className="relative aspect-video overflow-hidden rounded-lg border border-border"
+                >
+                  <Image
+                    src={src}
+                    alt={`Capture d'écran de ${project.title}`}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 33vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        )}
 
         <div className="grid lg:grid-cols-2 gap-12 mt-16">
           <FadeIn delay={0.05}>

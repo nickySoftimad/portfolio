@@ -24,4 +24,7 @@ Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un pr
 - [x] Nettoyage `public/` : SVG par défaut de `create-next-app` supprimés.
 - [x] Favicon (`icon.tsx`) et image Open Graph (`opengraph-image.tsx`) générés dynamiquement avec `next/og`, thème bleu + initiales N.R.
 - [x] Accessibilité : styles `focus-visible` ajoutés dans `globals.css` pour liens et boutons.
+- [x] Metadata par page : `title` + `description` dédiés sur `about`, `projects` (liste + détail dynamique par projet), `contact`.
+- [x] Captures d'écran ajoutées sur les pages projets PureControl et Aligneurs Français (`public/projects/`, champ `images` optionnel dans `Project`) — avec accord de l'utilisateur pour publication publique.
 - [ ] Page contact : actuellement seulement des liens (email/tel/LinkedIn), pas de formulaire — laissé tel quel (choix de design valable), à revoir si besoin d'un formulaire.
+- [ ] Captures manquantes pour DynamikMood et Simulateur de Crédit (projets plus anciens).

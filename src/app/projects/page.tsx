@@ -5,6 +5,8 @@ import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Projets — Nicky Rabesoa",
+  description:
+    "Projets React, Next.js et TypeScript réalisés par Nicky Rabesoa : plateformes SaaS médicales, dashboards et applications web métier.",
 };
 
 export default function ProjectsPage() {

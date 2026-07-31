@@ -8,10 +8,35 @@ export const profile = {
   summary:
     "Ingénieur Frontend React avec plus de 3 ans d'expérience dans la conception, le développement et l'optimisation d'applications web modernes. Actuellement développeur freelance indépendant, livrant des solutions de haute qualité pour des initiatives stratégiques. Maîtrise avancée de JavaScript (ES6+), React.js, Next.js, TypeScript et Node.js.",
   skills: {
-    Frontend: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS"],
-    "Backend & APIs": ["Node.js", "Django", "Express.js", "API REST", "WebSocket"],
-    "Outils & Versioning": ["Git", "GitHub/GitLab", "Docker", "Cypress", "Supabase"],
-    Méthodologies: ["Agile/Scrum", "Leadership d'équipe", "Résolution de problèmes", "Travail remote indépendant"],
+    Frontend: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+    ],
+    "Backend & APIs": [
+      "Node.js",
+      "Django",
+      "Express.js",
+      "API REST",
+      "WebSocket",
+    ],
+    "Outils & Versioning": [
+      "Git",
+      "GitHub/GitLab",
+      "Docker",
+      "Cypress",
+      "Supabase",
+    ],
+    Méthodologies: [
+      "Agile/Scrum",
+      "Leadership d'équipe",
+      "Résolution de problèmes",
+      "Travail remote indépendant",
+    ],
   },
   experience: [
     {
@@ -63,13 +88,15 @@ export const profile = {
       degree: "Master 2 en Informatique",
       school: "Institut Supérieur Polytechnique de Madagascar",
       period: "2021 - 2023",
-      detail: "Systèmes d'information de gestion, Génie logiciel et Intelligence artificielle",
+      detail:
+        "Systèmes d'information de gestion, Génie logiciel et Intelligence artificielle",
     },
     {
       degree: "Licence en Informatique",
       school: "Institut Supérieur Polytechnique de Madagascar",
       period: "2018 - 2021",
-      detail: "Systèmes d'information de gestion, Génie logiciel et Intelligence artificielle",
+      detail:
+        "Systèmes d'information de gestion, Génie logiciel et Intelligence artificielle",
     },
     {
       degree: "Baccalauréat",
@@ -80,7 +107,7 @@ export const profile = {
   ],
   languages: [
     { name: "Français", level: "Courant" },
-    { name: "Anglais", level: "Professionnel" },
+    { name: "Anglais", level: "Courant" },
     { name: "Malgache", level: "Natif" },
   ],
 };
