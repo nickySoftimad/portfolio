@@ -1,65 +1,117 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { motion } from "motion/react";
+import { profile } from "@/data/profile";
+import { projects } from "@/data/projects";
+import FadeIn from "@/components/FadeIn";
+
+const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div>
+      <section className="min-h-[85vh] flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-24 border-b border-border">
+        <motion.p
+          className="font-mono text-accent text-sm mb-6"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: easeOut }}
+        >
+          01 — Développeur Fullstack / Frontend React
+        </motion.p>
+        <motion.h1
+          className="text-4xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05] max-w-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1, ease: easeOut }}
+        >
+          {profile.name}, je construis des interfaces web qui tiennent la
+          route en production.
+        </motion.h1>
+        <motion.p
+          className="mt-8 max-w-2xl text-muted text-base sm:text-lg leading-relaxed"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25, ease: easeOut }}
+        >
+          {profile.summary}
+        </motion.p>
+        <motion.div
+          className="mt-10 flex flex-wrap gap-4"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.35, ease: easeOut }}
+        >
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 bg-accent text-background px-6 py-3 text-sm font-medium hover:opacity-90 hover:scale-[1.02] transition-all"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Voir les projets →
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium hover:border-accent hover:text-accent transition-colors"
           >
-            Documentation
-          </a>
+            Me contacter
+          </Link>
+        </motion.div>
+      </section>
+
+      <section className="px-6 sm:px-12 lg:px-16 py-20 border-b border-border">
+        <FadeIn>
+          <div className="flex items-baseline justify-between mb-10">
+            <p className="font-mono text-accent text-sm">02 — Projets sélectionnés</p>
+            <Link href="/projects" className="text-sm text-muted hover:text-accent transition-colors">
+              Tout voir →
+            </Link>
+          </div>
+        </FadeIn>
+        <div className="grid sm:grid-cols-2 gap-px bg-border">
+          {projects.slice(0, 4).map((project, i) => (
+            <FadeIn key={project.slug} delay={i * 0.08}>
+              <Link
+                href={`/projects/${project.slug}`}
+                className="group bg-background p-8 flex flex-col justify-between min-h-[220px] hover:bg-surface transition-colors h-full"
+              >
+                <div className="flex items-start justify-between">
+                  <span className="index-num text-xs text-muted">0{i + 1}</span>
+                  <span
+                    className="w-2.5 h-2.5 rounded-full transition-transform group-hover:scale-125"
+                    style={{ backgroundColor: project.color }}
+                  />
+                </div>
+                <div>
+                  <h3 className="text-xl font-medium mb-2 group-hover:text-accent transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-muted line-clamp-2">{project.summary}</p>
+                </div>
+              </Link>
+            </FadeIn>
+          ))}
         </div>
-      </main>
+      </section>
+
+      <section className="px-6 sm:px-12 lg:px-16 py-20">
+        <FadeIn>
+          <p className="font-mono text-accent text-sm mb-10">03 — Stack technique</p>
+        </FadeIn>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {Object.entries(profile.skills).map(([category, items], i) => (
+            <FadeIn key={category} delay={i * 0.08}>
+              <h4 className="text-sm font-medium mb-4">{category}</h4>
+              <ul className="space-y-2">
+                {items.map((item) => (
+                  <li key={item} className="text-sm text-muted">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </FadeIn>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }
