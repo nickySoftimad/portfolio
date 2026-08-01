@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, FolderGit2 } from "lucide-react";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import GithubIcon from "@/components/icons/GithubIcon";
 import { profile } from "@/data/profile";
@@ -117,6 +118,18 @@ export default function ContactPage() {
           </p>
           <p className="text-lg">{profile.location}</p>
         </div>
+        <Link
+          href="/projects"
+          className="group bg-background p-8 hover:bg-surface transition-colors"
+        >
+          <p className="flex items-center gap-2 text-xs text-muted mb-2">
+            <FolderGit2 className="w-3.5 h-3.5" strokeWidth={1.75} />
+            Mes réalisations
+          </p>
+          <p className="text-lg group-hover:text-accent transition-colors">
+            Voir les projets →
+          </p>
+        </Link>
       </motion.div>
       </div>
 
