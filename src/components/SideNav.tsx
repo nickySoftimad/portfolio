@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
 import { Mail } from "lucide-react";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
 import { profile } from "@/data/profile";
 
 const links = [
@@ -86,6 +87,15 @@ export default function SideNav() {
             className="hover:text-accent transition-colors"
           >
             <LinkedinIcon className="w-4 h-4" />
+          </a>
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="hover:text-accent transition-colors"
+          >
+            <GithubIcon className="w-4 h-4" />
           </a>
           <a
             href={`mailto:${profile.email}`}

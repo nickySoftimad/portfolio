@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import LinkedinIcon from "@/components/icons/LinkedinIcon";
+import GithubIcon from "@/components/icons/GithubIcon";
 import { profile } from "@/data/profile";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
@@ -27,6 +28,13 @@ const links = [
     href: profile.linkedin,
     external: true,
     icon: <LinkedinIcon className="w-3.5 h-3.5" />,
+  },
+  {
+    label: "GitHub",
+    value: "Voir le profil →",
+    href: profile.github,
+    external: true,
+    icon: <GithubIcon className="w-3.5 h-3.5" />,
   },
 ];
 

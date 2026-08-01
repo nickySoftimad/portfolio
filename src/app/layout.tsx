@@ -50,7 +50,7 @@ const personJsonLd = {
     addressLocality: "Antananarivo",
     addressCountry: "MG",
   },
-  sameAs: [profile.linkedin],
+  sameAs: [profile.linkedin, profile.github],
   knowsAbout: Object.values(profile.skills).flat(),
 };
 
