@@ -28,3 +28,8 @@ Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un pr
 - [x] Captures d'écran ajoutées sur les pages projets PureControl et Aligneurs Français (`public/projects/`, champ `images` optionnel dans `Project`) — avec accord de l'utilisateur pour publication publique.
 - [ ] Page contact : actuellement seulement des liens (email/tel/LinkedIn), pas de formulaire — laissé tel quel (choix de design valable), à revoir si besoin d'un formulaire.
 - [ ] Captures manquantes pour DynamikMood et Simulateur de Crédit (projets plus anciens).
+- [ ] Logos clients (Softimad, Aligneurs Français) sur les pages projets — pas de fichiers disponibles pour l'instant, actuellement juste le nom en texte.
+- [x] JSON-LD `Person` dans `layout.tsx` pour le SEO (rich results Google).
+- [x] Titre d'onglet raccourci ("Dev Frontend React" au lieu de "Ingénieur Frontend React") pour éviter la troncature.
+- [x] Mention du délai de réponse (24h ouvrées) ajoutée dès l'accueil, pas seulement sur Contact.
+- [x] Section "Comment on travaille ensemble" (3 étapes) ajoutée en bas de la page Contact.

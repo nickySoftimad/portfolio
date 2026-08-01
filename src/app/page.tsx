@@ -58,6 +58,15 @@ export default function Home() {
             Me contacter
           </Link>
         </motion.div>
+        <motion.p
+          className="mt-6 flex items-center gap-2 text-xs text-muted"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.45 }}
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          Réponse sous 24h ouvrées
+        </motion.p>
       </section>
 
       <section className="px-6 sm:px-12 lg:px-16 py-20 border-b border-border">

@@ -30,9 +30,28 @@ const links = [
   },
 ];
 
+const steps = [
+  {
+    num: "01",
+    title: "Échange initial",
+    desc: "On discute de votre besoin, du contexte et des contraintes — sans engagement, sous 24h ouvrées.",
+  },
+  {
+    num: "02",
+    title: "Cadrage & devis",
+    desc: "Je propose une estimation claire du périmètre, du délai et du coût avant de démarrer quoi que ce soit.",
+  },
+  {
+    num: "03",
+    title: "Développement",
+    desc: "Livraisons régulières, points d'avancement, code maintenable — vous savez toujours où en est le projet.",
+  },
+];
+
 export default function ContactPage() {
   return (
-    <div className="px-6 sm:px-12 lg:px-16 py-20 min-h-[80vh] flex flex-col justify-center">
+    <div className="px-6 sm:px-12 lg:px-16 py-20">
+      <div className="min-h-[70vh] flex flex-col justify-center">
       <motion.p
         className="font-mono text-accent text-sm mb-4"
         initial={{ opacity: 0, y: 12 }}
@@ -91,6 +110,24 @@ export default function ContactPage() {
           <p className="text-lg">{profile.location}</p>
         </div>
       </motion.div>
+      </div>
+
+      <div className="mt-24 pt-16 border-t border-border">
+        <p className="font-mono text-accent text-sm mb-10">
+          Comment on travaille ensemble
+        </p>
+        <div className="grid sm:grid-cols-3 gap-10 max-w-3xl">
+          {steps.map((step) => (
+            <div key={step.num}>
+              <p className="index-num text-xs text-muted mb-3">{step.num}</p>
+              <h3 className="text-lg font-medium mb-2">{step.title}</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
