@@ -5,7 +5,7 @@ export const profile = {
   email: "rabesoanicky@gmail.com",
   phone: "+261 34 22 064 08",
   linkedin: "https://linkedin.com/in/nicky-rabesoa-ba25ba1a1",
-  github: "https://github.com/nickySoftimad",
+  github: "https://github.com/nickyRabesoa",
   summary:
     "Ingénieur Frontend React avec plus de 3 ans d'expérience dans la conception, le développement et l'optimisation d'applications web modernes. Actuellement développeur freelance indépendant, livrant des solutions de haute qualité pour des initiatives stratégiques. Maîtrise avancée de JavaScript (ES6+), React.js, Next.js, TypeScript et Node.js.",
   skills: {
