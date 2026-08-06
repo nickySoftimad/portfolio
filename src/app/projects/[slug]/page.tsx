@@ -60,6 +60,30 @@ export default async function ProjectDetailPage({
           <p className="mt-6 max-w-2xl text-lg text-muted leading-relaxed">
             {project.summary}
           </p>
+          {(project.repoUrl || project.liveUrl) && (
+            <div className="flex gap-4 mt-6">
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-accent hover:underline"
+                >
+                  Voir le site ↗
+                </a>
+              )}
+              {project.repoUrl && (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-accent hover:underline"
+                >
+                  Code source ↗
+                </a>
+              )}
+            </div>
+          )}
         </FadeIn>
 
         <FadeIn delay={0.1}>

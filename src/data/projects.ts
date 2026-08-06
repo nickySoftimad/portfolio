@@ -13,6 +13,8 @@ export type Project = {
   stack: string[];
   color: string;
   images?: string[];
+  repoUrl?: string;
+  liveUrl?: string;
 };
 
 export const projects: Project[] = [
@@ -105,5 +107,32 @@ export const projects: Project[] = [
       "Premier projet fullstack JavaScript complet, posant les bases de l'expertise React.js et Node.js développée depuis.",
     stack: ["React.js", "Express.js", "Node.js"],
     color: "#10b981",
+  },
+  {
+    slug: "streaklet",
+    title: "Streaklet",
+    client: "Projet personnel",
+    year: "2026",
+    role: "Conception produit, design et développement (solo)",
+    tags: ["Projet perso", "Next.js 16", "Postgres", "IA", "Open source"],
+    summary:
+      "Tracker d'habitudes multi-utilisateur avec streaks et heatmap façon GitHub, conçu et développé seul de bout en bout, du modèle de données au déploiement.",
+    context:
+      "Envie d'un projet 100% personnel pour prouver une capacité à décider seul — modèle de données, arbitrages produit, périmètre — plutôt que d'exécuter un cahier des charges client. Repo public, déployé, avec une vraie authentification et une vraie base de données plutôt qu'une démo locale.",
+    challenge:
+      "Un check-in d'habitude est un événement de la journée vécue par l'utilisateur, pas un instant physique : cocher une habitude à 23h30 heure de Paris, c'est déjà le lendemain en UTC. Stocker un timestamp et convertir à l'affichage casse la série silencieusement — le bug est invisible en dev et ne se révèle qu'en usage réel, à la frontière du jour.",
+    solution:
+      "Modélisation du check-in comme une DATE représentant le jour civil vécu (local_date), comparée uniquement à d'autres dates locales, jamais convertie. Le \"aujourd'hui\" de chaque utilisateur est recalculé côté serveur à partir de son fuseau horaire stocké en base, jamais depuis l'horloge du navigateur. Calcul des streaks en TypeScript pur, sans dépendance de date, testé unitairement (année bissextile, changement d'heure, ligne de changement de date). Authentification maison (sessions JWT, cookies HttpOnly) plutôt qu'une librairie, pour garder la maîtrise du modèle de sécurité sur Next.js 16.",
+    result:
+      "Application déployée et fonctionnelle : authentification, CRUD complet, streaks, heatmap annuelle, export des données et suggestions d'habitudes générées par un LLM — dont la sortie est validée par schéma avant tout usage, pour qu'une réponse malformée ne puisse jamais atteindre le formulaire. Code source public, incluant les tests qui documentent les cas limites du problème de fuseaux horaires.",
+    stack: ["Next.js 16", "React 19", "TypeScript", "Drizzle ORM", "Neon Postgres", "Groq / LLM", "Tailwind CSS 4", "Vercel"],
+    color: "#22c55e",
+    repoUrl: "https://github.com/nickyRabesoa/streaklet",
+    liveUrl: "https://streaklet.vercel.app",
+    images: [
+      "/projects/streaklet/1.png",
+      "/projects/streaklet/2.png",
+      "/projects/streaklet/3.png",
+    ],
   },
 ];

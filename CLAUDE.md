@@ -11,12 +11,12 @@ Portfolio personnel de Nicky Rabesoa (ingénieur frontend React / fullstack free
 - `src/data/profile.ts` — profil, expérience, skills, formation
 - `src/data/projects.ts` — projets détaillés (contexte, défi, solution, résultat, stack)
 
-Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un projet, ajouter une entrée à `projects.ts` (respecter le type `Project`) — la page `[slug]` s'en sert automatiquement.
+Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un projet, ajouter une entrée à `projects.ts` (respecter le type `Project`) — la page `[slug]` s'en sert automatiquement. Champs optionnels `repoUrl`/`liveUrl` pour les projets avec un lien externe (utilisé par Streaklet).
 
 ## État actuel
 
 - Site de base en place : accueil, about, liste + détail projets, contact, thème bleu, animations de transition.
-- 4 projets renseignés dans `projects.ts`.
+- 5 projets renseignés dans `projects.ts` (4 missions client + 1 projet personnel : Streaklet).
 
 ## À faire / idées
 
@@ -33,3 +33,4 @@ Pas de CMS : tout le contenu éditorial vit dans `src/data/`. Pour ajouter un pr
 - [x] Titre d'onglet raccourci ("Dev Frontend React" au lieu de "Ingénieur Frontend React") pour éviter la troncature.
 - [x] Mention du délai de réponse (24h ouvrées) ajoutée dès l'accueil, pas seulement sur Contact.
 - [x] Section "Comment on travaille ensemble" (3 étapes) ajoutée en bas de la page Contact.
+- [x] Streaklet (projet personnel, tracker d'habitudes) ajouté comme 5e projet — repo public et démo déployée, liens affichés sur la page détail via `repoUrl`/`liveUrl`.
